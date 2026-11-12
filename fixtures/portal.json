@@ -1,0 +1,9 @@
+{
+  "title": "双人复核门户的角色隔离自动化",
+  "local": true,
+  "roles": [
+    "人工使用者"
+  ],
+  "entry": "/",
+  "scenario": "separated-approval"
+}
