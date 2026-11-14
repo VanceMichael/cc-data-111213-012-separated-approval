@@ -17,6 +17,10 @@ async function run() {
     console.log(JSON.stringify(receipt, null, 2));
   } else if (command === 'list') {
     console.log(JSON.stringify(await new Archive(file || directory).receipts(), null, 2));
+  } else if (command === 'review-demo') {
+    const { runDemonstration } = await import('./demo.js');
+    const report = await runDemonstration({ headless: process.env.HEADED !== '1' });
+    console.log(JSON.stringify(report, null, 2));
   } else if (command === 'demo') {
     const temporary = await mkdtemp(join(tmpdir(), 'intake-'));
     try {
@@ -27,6 +31,6 @@ async function run() {
       const domain = await import('./domain.js');
       console.log(JSON.stringify(await domain.livePreview(), null, 2));
     } finally { await rm(temporary, { recursive: true, force: true }); }
-  } else { throw new Error('支持 inspect、capture、list、demo'); }
+  } else { throw new Error('支持 inspect、capture、list、demo、review-demo'); }
 }
 run().catch(error => { console.error(error.message); process.exitCode = 1; });

@@ -11,8 +11,9 @@
     "start": "node src/portal.js",
     "cli": "node src/cli.js",
     "demo": "node src/cli.js demo",
+    "review-demo": "node src/cli.js review-demo",
     "fixtures": "node scripts/create-fixtures.js",
-    "check": "node --check src/cli.js && node --check src/domain.js"
+    "check": "node --check src/cli.js && node --check src/domain.js && node --check src/portal.js && node --check src/policy.js && node --check src/assistant.js && node --check src/demo.js"
   },
   "dependencies": {
     "playwright": "1.56.1"

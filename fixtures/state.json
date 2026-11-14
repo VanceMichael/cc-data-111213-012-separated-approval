@@ -12,9 +12,17 @@
     }
   ],
   "payment": {
+    "id": "PAY-SYN-001",
     "amount": 100,
+    "purpose": "合作资料核验演练",
     "version": 1,
     "maker": "maker-A",
-    "approved": false
-  }
+    "approved": false,
+    "attachment": {
+      "name": "付款资料-SYN-001.txt",
+      "path": "fixtures/attachments/付款资料-SYN-001.txt",
+      "sha256": "ddfacbdf5df830b7d75e825096d4624991c2bc657287a6bd879f26ac494d783f"
+    }
+  },
+  "opinions": []
 }
